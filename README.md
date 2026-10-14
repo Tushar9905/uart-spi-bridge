@@ -36,3 +36,17 @@ Requires [Icarus Verilog](https://steveicarus.github.io/iverilog/).
 
 Each testbench prints `PASS` or `FAIL`. Waveforms are written to `build/*.vcd`
 and can be opened with GTKWave.
+
+## Synthesis
+
+```sh
+vivado -mode batch -source syn/synth.tcl
+```
+
+Results with Vivado 2025.1 on an Artix-7 (`xc7a35tcpg236-1`), placed and routed:
+
+| Clock | Slice LUTs | Flip-flops | WNS |
+|---|---|---|---|
+| 250 MHz | 103 | 135 | +0.248 ns |
+
+Reports are written to `build/syn/`.
